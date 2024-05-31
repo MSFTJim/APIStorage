@@ -2,3 +2,5 @@ dotnet new web -n apiStorage
 
 dotnet new sln -n apiStorage-Sln
 dotnet sln add ./apiStorage/apiStorage.csproj
+
+dotnet add package Azure.Storage.Blobs
