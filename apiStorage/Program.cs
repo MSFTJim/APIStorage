@@ -20,7 +20,7 @@ app.MapGet("/WalkTimes/{airportCode}", async (string airportCode) =>
 
 async Task<string> GetBlobContents(string airportCode, string jsonFileSuffix)
 {
-    // retreive Azure Storage items from settings (in development, keys in secrets.json )
+    // retrieve Azure Storage items from settings (in development, keys in secrets.json )
     string? connectionString = app.Configuration["AzureBlobStorage:ConnectionString"];
     string? containerName = app.Configuration["AzureBlobStorage:ContainerName"];
     string upperAirportCode = airportCode.ToUpper();
