@@ -4,3 +4,11 @@ dotnet new sln -n apiStorage-Sln
 dotnet sln add ./apiStorage/apiStorage.csproj
 
 dotnet add package Azure.Storage.Blobs
+ 
+
+/SecurityTimes/{airportCode}
+/ParkingWaitTimes/{airportCode}
+/TaxiWaitTimes/{airportCode}
+
+JFKParkingWaitTimes.json
+JFKTaxiWaitTimes.json
