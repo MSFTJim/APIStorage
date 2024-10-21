@@ -4,6 +4,11 @@ using Azure.Storage.Blobs.Models;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+app.MapGet("/HelloWorld", () =>
+{
+    return "You reached Hello World!";
+});
+
 app.MapGet("/SecurityTimes/{airportCode}", async (string airportCode) =>
 {
     string jsonFileSuffix = "SecurityTimes.json";
@@ -27,14 +32,14 @@ app.MapGet("/ParkingWaitTimes/{airportCode}", async (string airportCode) =>
 
 app.MapGet("/TaxiWaitTimes/{airportCode}", async (string airportCode) =>
 {
-    string jsonFileSuffix = "ParkingWaitTimes.json";
+    string jsonFileSuffix = "TaxiWaitTimes.json";
     string blobContents = await GetBlobContents(airportCode, jsonFileSuffix);
     return blobContents;
 });
 
 async Task<string> GetBlobContents(string airportCode, string jsonFileSuffix)
 {
-    // retrieve Azure Storage items from settings (in development, keys in secrets.json )
+    // retrieve Azure Storage items from settings (in development, keys in secrets.json )    
     string? connectionString = app.Configuration["AzureBlobStorage:ConnectionString"];
     string? containerName = app.Configuration["AzureBlobStorage:ContainerName"];
     string upperAirportCode = airportCode.ToUpper();

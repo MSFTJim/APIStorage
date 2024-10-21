@@ -1,0 +1,22 @@
+{
+    "airport": "XYZ International Airport",
+    "date": "2023-10-01",
+    "checkpoints": [
+        {
+            "name": "Checkpoint A",
+            "location": "Terminal 1",
+            "wait_time_minutes": 15
+        },
+        {
+            "name": "Checkpoint B",
+            "location": "Terminal 2",
+            "wait_time_minutes": 20
+        },
+        {
+            "name": "Checkpoint C",
+            "location": "Terminal 3",
+            "wait_time_minutes": 10
+        }
+    ],
+    "last_updated": "2023-10-01T08:30:00Z"
+}
